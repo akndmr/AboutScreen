@@ -1,0 +1,4 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">AboutScreen</string>
+    <string name="dummy_description" translatable="false" tools:ignore="ExtraTranslation">An Android Developer. Created this library for Open Source World! </string>
+</resources>

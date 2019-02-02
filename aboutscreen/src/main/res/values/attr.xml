@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AboutScreenPersonal">
+        <attr name="isFromXml"                          format="boolean"/>
+
+        <attr name="cardRadius"                         format="dimension" />
+        <attr name="cardElevation"                      format="dimension" />
+        <attr name="cardBackgroundColor"                format="color"/>
+
+        <attr name="textName"                           format="reference|string"/>
+        <attr name="textDescription"                    format="reference|string"/>
+        <attr name="textWebsite"                        format="reference|string"/>
+        <attr name="textGithub"                         format="reference|string"/>
+        <attr name="textFacebook"                       format="reference|string"/>
+        <attr name="textTwitter"                        format="reference|string"/>
+        <attr name="textGooglePlay"                     format="reference|string"/>
+
+        <attr name="profilePhoto"                       format="reference|integer"/>
+        <attr name="iconWebsite"                        format="reference|integer"/>
+        <attr name="iconGithub"                         format="reference|integer"/>
+        <attr name="iconFacebook"                       format="reference|integer"/>
+        <attr name="iconTwitter"                        format="reference|integer"/>
+        <attr name="iconGooglePlay"                     format="reference|integer"/>
+
+        <attr name="urlWebsite"                         format="reference|string"/>
+        <attr name="urlGithub"                          format="reference|string"/>
+        <attr name="urlFacebook"                        format="reference|string"/>
+        <attr name="urlTwitter"                         format="reference|string"/>
+
+        <attr name="iconColorWebsite"                   format="color"/>
+        <attr name="iconColorGithub"                    format="color"/>
+        <attr name="iconColorFacebook"                  format="color"/>
+        <attr name="iconColorTwitter"                   format="color"/>
+        <attr name="iconColorGooglePlay"                format="color"/>
+
+        <attr name="textColor"                          format="color" />
+        <attr name="textColorLinks"                     format="color"/>
+        <attr name="textColorName"                      format="color"/>
+        <attr name="textColorDescription"               format="color"/>
+        <attr name="textColorWebsite"                   format="color"/>
+        <attr name="textColorGithub"                    format="color"/>
+        <attr name="textColorFacebook"                  format="color"/>
+        <attr name="textColorTwitter"                   format="color"/>
+        <attr name="textColorGooglePlay"                format="color"/>
+
+        <attr name="textFontId"                         format="reference|integer"/>
+        <attr name="textLinksFontId"                    format="reference|integer"/>
+        <attr name="textNameFontId"                     format="reference|integer"/>
+        <attr name="textDescriptionFontId"              format="reference|integer"/>
+
+        <attr name="textFontStyle"                      format="reference|string"/>
+        <attr name="textLinksFontStyle"                 format="reference|string"/>
+        <attr name="textNameFontStyle"                  format="reference|string"/>
+        <attr name="textDescriptionFontStyle"           format="reference|string"/>
+
+        <attr name="isGooglePlayLinkEnabled"            format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="AboutScreenProject">
+        <attr name="cardRadiusProject"                         format="dimension" />
+        <attr name="cardElevationProject"                      format="dimension" />
+        <attr name="cardBackgroundColorProject"                format="color"/>
+
+        <attr name="textProjectName"                    format="reference|string"/>
+        <attr name="textProjectDescription"             format="reference|string"/>
+        <attr name="textProjectVersion"                 format="reference|string"/>
+        <attr name="textDeveloperName"                  format="reference|string"/>
+        <attr name="textDeveloperDescription"           format="reference|string"/>
+        <attr name="textProjectWebsite"                 format="reference|string"/>
+        <attr name="textProjectGithub"                  format="reference|string"/>
+        <attr name="textProjectFacebook"                format="reference|string"/>
+        <attr name="textProjectTwitter"                 format="reference|string"/>
+        <attr name="textProjectGooglePlay"              format="reference|string"/>
+
+        <attr name="projectLogo"                        format="reference|integer"/>
+        <attr name="developerLogo"                      format="reference|integer"/>
+        <attr name="iconProjectWebsite"                 format="reference|integer"/>
+        <attr name="iconProjectGithub"                  format="reference|integer"/>
+        <attr name="iconProjectFacebook"                format="reference|integer"/>
+        <attr name="iconProjectTwitter"                 format="reference|integer"/>
+        <attr name="iconProjectGooglePlay"              format="reference|integer"/>
+
+        <attr name="urlProjectWebsite"                  format="reference|string"/>
+        <attr name="urlProjectGithub"                   format="reference|string"/>
+        <attr name="urlProjectFacebook"                 format="reference|string"/>
+        <attr name="urlProjectTwitter"                  format="reference|string"/>
+
+        <attr name="iconColorProjectWebsite"            format="color"/>
+        <attr name="iconColorProjectGithub"             format="color"/>
+        <attr name="iconColorProjectFacebook"           format="color"/>
+        <attr name="iconColorProjectTwitter"            format="color"/>
+        <attr name="iconColorProjectGooglePlay"         format="color"/>
+
+        <attr name="textColorProject"                   format="color" />
+        <attr name="textColorProjectLinks"              format="color"/>
+        <attr name="textColorProjectName"               format="color"/>
+        <attr name="textColorProjectVersion"            format="color"/>
+        <attr name="textColorProjectDescription"        format="color"/>
+        <attr name="textColorDeveloperName"             format="color"/>
+        <attr name="textColorDeveloperDescription"      format="color"/>
+        <attr name="textColorProjectWebsite"            format="color"/>
+        <attr name="textColorProjectGithub"             format="color"/>
+        <attr name="textColorProjectFacebook"           format="color"/>
+        <attr name="textColorProjectTwitter"            format="color"/>
+        <attr name="textColorProjectGooglePlay"         format="color"/>
+
+        <attr name="textProjectFontId"                  format="reference|integer"/>
+        <attr name="textProjectNameFontId"              format="reference|integer"/>
+        <attr name="textProjectDescriptionFontId"       format="reference|integer"/>
+        <attr name="textProjectVersionFontId"           format="reference|integer"/>
+        <attr name="textDeveloperNameFontId"            format="reference|integer"/>
+        <attr name="textDeveloperDescriptionFontId"     format="reference|integer"/>
+        <attr name="textProjectLinksFontId"             format="reference|integer"/>
+
+        <attr name="textProjectFontStyle"               format="reference|string"/>
+        <attr name="textProjectLinksFontStyle"          format="reference|string"/>
+        <attr name="textProjectNameFontStyle"           format="reference|string"/>
+        <attr name="textProjectDescriptionFontStyle"    format="reference|string"/>
+        <attr name="textProjectVersionFontStyle"        format="reference|string"/>
+        <attr name="textDeveloperNameFontStyle"         format="reference|string"/>
+        <attr name="textDeveloperDescriptionFontStyle"  format="reference|string"/>
+
+        <attr name="isProjectGooglePlayLinkEnabled"     format="boolean"/>
+        <attr name="shouldGetVersionFromGradle"         format="boolean"/>
+
+        <attr name="dividerColor"                       format="color"/>
+    </declare-styleable>
+</resources>

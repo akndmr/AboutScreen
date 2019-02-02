@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="font_normal">NORMAL</string>
+    <string name="font_bold">BOLD</string>
+    <string name="font_italic">ITALIC</string>
+    <string name="font_bold_italic">BOLD_ITALIC</string>
+</resources>
