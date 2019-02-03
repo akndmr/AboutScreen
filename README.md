@@ -132,8 +132,13 @@ Your urls don't have to include **http://** or **https://**. OnClickListeners ch
 ## Apps Using AboutScreen
 You can create an issue and type your app name, logo *(100x100 px)* url and link to market. We will add them in this list.
 
-1. [Popvie](https://play.google.com/store/apps/dev?id=5768767299150574777)
-![Popvie App](https://raw.githubusercontent.com/akndmr/project-ss/master/popvie_logo.png =100x100)
+| App Logo  | App Name  | App Link
+|--|--|--|
+|<img src="https://raw.githubusercontent.com/akndmr/project-ss/master/popvie_logo.png" width="100"/>| **Popvie** |[Google Play](https://play.google.com/store/apps/dev?id=5768767299150574777) 
+|-|-|-
+
+
+
 
 ## License
 MIT License
