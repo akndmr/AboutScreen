@@ -70,7 +70,7 @@ public class AboutScreenPersonalLayout extends ConstraintLayout {
     private String twitterUrl;
 
     private int mPhotoDrawableId, mWebsiteDrawableId, mGithubDrawableId, mFacebookDrawableId, mTwitterDrawableId, mGooglePlayDrawableId;
-    private String mWebsiteColorHex, mGithubColorHex, mFacebookColorHex, mTwitterColorHex, mGooglePlayColorHex;
+    private String mLinksColorHex, mWebsiteColorHex, mGithubColorHex, mFacebookColorHex, mTwitterColorHex, mGooglePlayColorHex;
     private String mWebsiteTextColorHex, mGithubTextColorHex, mFacebookTextColorHex, mTwitterTextColorHex, mGooglePlayTextColorHex;
     private String mNameTextColorHex, mDescriptionTextColorHex;
     private String mTextColorHex, mTextColorLinksHex;
@@ -147,6 +147,7 @@ public class AboutScreenPersonalLayout extends ConstraintLayout {
             mTwitterDrawableId          = t.getResourceId(R.styleable.AboutScreenPersonal_iconTwitter, R.drawable.ic_twitter);
             mGooglePlayDrawableId       = t.getResourceId(R.styleable.AboutScreenPersonal_iconGooglePlay, R.drawable.ic_rate_us);
 
+            mLinksColorHex              = t.getString(R.styleable.AboutScreenPersonal_iconColor);
             mWebsiteColorHex            = t.getString(R.styleable.AboutScreenPersonal_iconColorWebsite);
             mGithubColorHex             = t.getString(R.styleable.AboutScreenPersonal_iconColorGithub);
             mFacebookColorHex           = t.getString(R.styleable.AboutScreenPersonal_iconColorFacebook);
@@ -282,16 +283,26 @@ public class AboutScreenPersonalLayout extends ConstraintLayout {
         }
 
         // Set icon tint colors
-        if(mWebsiteColorHex != null)
-            setIconTintColor(mWebsiteIcon, mWebsiteColorHex);
-        if(mGithubColorHex != null)
-            setIconTintColor(mGithubIcon, mGithubColorHex);
-        if(mFacebookColorHex != null)
-            setIconTintColor(mFacebookIcon, mFacebookColorHex);
-        if(mTwitterColorHex != null)
-            setIconTintColor(mTwitterIcon, mTwitterColorHex);
-        if(mGooglePlayColorHex != null)
-            setIconTintColor(mGooglePlayIcon, mGooglePlayColorHex);
+        if(mLinksColorHex != null){
+            setIconTintColor(mWebsiteIcon, mLinksColorHex);
+            setIconTintColor(mGithubIcon, mLinksColorHex);
+            setIconTintColor(mFacebookIcon, mLinksColorHex);
+            setIconTintColor(mTwitterIcon, mLinksColorHex);
+            setIconTintColor(mGooglePlayIcon, mLinksColorHex);
+        }
+        else{
+            if(mWebsiteColorHex != null)
+                setIconTintColor(mWebsiteIcon, mWebsiteColorHex);
+            if(mGithubColorHex != null)
+                setIconTintColor(mGithubIcon, mGithubColorHex);
+            if(mFacebookColorHex != null)
+                setIconTintColor(mFacebookIcon, mFacebookColorHex);
+            if(mTwitterColorHex != null)
+                setIconTintColor(mTwitterIcon, mTwitterColorHex);
+            if(mGooglePlayColorHex != null)
+                setIconTintColor(mGooglePlayIcon, mGooglePlayColorHex);
+        }
+
 
         // Set text colors
         if(mTextColorHex != null){
@@ -367,7 +378,7 @@ public class AboutScreenPersonalLayout extends ConstraintLayout {
 
 
         // Set font styles
-        if(mTextFontStyle != null){
+        if(mTextFontStyle != null){ // all texts
             switch (mTextFontStyle) {
                 case FONT_STYLE_NORMAL:
                     mName.setTypeface(mName.getTypeface(), Typeface.NORMAL);
@@ -426,7 +437,7 @@ public class AboutScreenPersonalLayout extends ConstraintLayout {
             }
         }
         else{
-            if(mLinksFontStyle != null){
+            if(mLinksFontStyle != null){ // links text
                 switch (mLinksFontStyle) {
                     case FONT_STYLE_NORMAL:
                         mWebsite.setTypeface(mWebsite.getTypeface(), Typeface.NORMAL);
@@ -512,9 +523,6 @@ public class AboutScreenPersonalLayout extends ConstraintLayout {
                 }
             }
         }
-
-       /* invalidate();
-        requestLayout();*/
     }
 
     private void setIconTintColor(ImageView icon, String colorHex){
@@ -1007,26 +1015,11 @@ public class AboutScreenPersonalLayout extends ConstraintLayout {
 
     @Override
     protected Parcelable onSaveInstanceState() {
-        Bundle bundle = new Bundle();
-
-        bundle.putParcelable(STATE_SUPER_CLASS, super.onSaveInstanceState());
-        bundle.putString(STATE_LINK_WEBSITE, mLinkWebsite);
-        bundle.putString(STATE_LINK_GITHUB, mLinkGithub);
-        bundle.putBoolean(STATE_IS_GOOGLE_PLAY_ENABLED, isGooglePlayLinkAdded);
-        return bundle;
+        return super.onSaveInstanceState();
     }
 
     @Override
     protected void onRestoreInstanceState(Parcelable state) {
-        if (state instanceof Bundle) {
-            Bundle bundle = (Bundle)state;
-
-            mLinkWebsite = bundle.getString(STATE_LINK_WEBSITE);
-            mLinkGithub = bundle.getString(STATE_LINK_GITHUB);
-            isGooglePlayLinkAdded = bundle.getBoolean(STATE_IS_GOOGLE_PLAY_ENABLED);
-
-            mWebsite.setText(mLinkWebsite);
-        }
         super.onRestoreInstanceState(state);
     }
 

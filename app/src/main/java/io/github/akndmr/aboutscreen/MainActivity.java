@@ -2,6 +2,7 @@ package io.github.akndmr.aboutscreen;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -17,14 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
         AboutScreenPersonalLayout aboutScreenPersonalLayout = (AboutScreenPersonalLayout) findViewById(R.id.about_screen_layout);
 
+        aboutScreenPersonalLayout.setDescriptionText("this text is programmatically set");
 
-        aboutScreenPersonalLayout.setWebsiteText("Website");
-        aboutScreenPersonalLayout.setLinkWebsite("akndmr.github.io");
-        aboutScreenPersonalLayout.setGithubIcon(R.drawable.ic_placeholder);
-        aboutScreenPersonalLayout.setGithubIconTintColor(R.color.colorPrimaryDark);
-        aboutScreenPersonalLayout.setWebsiteIconTintColor("#444");
-        aboutScreenPersonalLayout.setTextColorDescription(R.color.colorPrimary);
-        aboutScreenPersonalLayout.setTextColorName("#555");
         ImageView iv = aboutScreenPersonalLayout.getProfilePhoto();
         Glide.with(this)
                 .load(R.drawable.test_profile)

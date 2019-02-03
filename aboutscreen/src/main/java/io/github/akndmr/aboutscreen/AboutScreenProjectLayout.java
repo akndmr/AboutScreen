@@ -37,17 +37,17 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
     private CardView mCardView;
     private LinearLayout mContainerWebsite, mContainerGithub, mContainerFacebook, mContainerTwitter, mContainerGooglePlay;
     private TextView mTextViewProjectName, mTextViewProjectDescription, mTextViewProjectVersion,
-    mTextViewDeveloperName, mTextViewDeveloperDescription, mTextViewProjectWebsite, mTextViewProjectGithub,
+            mTextViewDevelopedBy, mTextViewDeveloperDescription, mTextViewProjectWebsite, mTextViewProjectGithub,
     mTextViewProjectFacebook, mTextViewProjectTwitter, mTextViewProjectGooglePlay;
     private ImageView mLogoProject, mLogoDeveloper, mIconWebsite, mIconGithub, mIconFacebook, mIconTwitter, mIconGooglePlay;
     private View mDividerTop, mDividerBottom;
 
     private int mCardViewRadius, mCardViewElevation;
     private String mCardViewBackgroundColor;
-    private String mProjectNameText, mProjectDescriptionText, mProjectVersionText, mProjectDeveloperNameText, mProjectDeveloperDescriptionText;
+    private String mProjectNameText, mProjectDescriptionText, mProjectVersionText, mProjectDevelopedByText, mProjectDeveloperDescriptionText;
     private String mProjectWebsiteText, mProjectGithubText, mProjectFacebookText, mProjectTwitterText, mProjectGooglePlayText;
     private String mProjectWebsiteUrl, mProjectGithubUrl, mProjectFacebookUrl, mProjecTwitterUrl;
-    private String mColorProjectName, mColorProjectDescription, mColorProjectVersion, mColorDeveloperName, mColorDeveloperDescription,
+    private String mColorProjectName, mColorProjectDescription, mColorProjectVersion, mColorDevelopedBy, mColorDeveloperDescription,
     mColorWebsiteText, mColorGithubText, mColorFacebookText, mColorTwitterText, mColorGooglePlayText,
     mColorWebsiteIcon, mColorGithubIcon, mColorFacebookIcon, mColorTwitterIcon, mCOlorGooglePlayIcon,
     mColorDividerTop, mColorDividerBottom, mColorProject, mColorProjectLinks, mColorProjectIcons;
@@ -55,15 +55,16 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
     private boolean mIsGooglePlayLinkAdded, mShouldGetVersionFromGradle;
     private int mLogoProjectDrawableId, mLogoDeveloperDrawableId, mIconWebsiteDrawableId, mIconGithubDrawableId,
     mIconFacebookDrawableId, mIconTwitterDrawableId, mIconGooglePlayDrawableId;
-    private int mProjectFontId, mProjectNameFontId, mProjectDescriptionFontId, mDeveloperNameFontId,
+    private int mProjectFontId, mProjectNameFontId, mProjectDescriptionFontId, mDevelopedByFontId,
             mDeveloperDescriptionFontId, mProjectLinksFontId, mProjectVersionFontId;
     private String mProjectFontStyle, mProjectNameFontStyle, mProjectDescriptionFontStyle, mProjectVersionFontStyle,
-            mDeveloperNameFontStyle, mDeveloperDescriptionFontStyle, mProjectLinksFontStyle;
+            mDevelopedByFontStyle, mDeveloperDescriptionFontStyle, mProjectLinksFontStyle;
 
     public AboutScreenProjectLayout(Context context) {
         super(context, null);
         initializeViews(context);
         bindViews();
+        setListeners();
     }
 
     public AboutScreenProjectLayout(Context context, AttributeSet attrs) {
@@ -71,6 +72,7 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
         setupAttributes(attrs);
         initializeViews(context);
         bindViews();
+        setListeners();
         setAttributesAndValues();
     }
 
@@ -79,6 +81,7 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
         setupAttributes(attrs);
         initializeViews(context);
         bindViews();
+        setListeners();
         setAttributesAndValues();
     }
 
@@ -102,7 +105,7 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
             mProjectNameText                    = t.getString(R.styleable.AboutScreenProject_textProjectName);
             mProjectDescriptionText             = t.getString(R.styleable.AboutScreenProject_textProjectDescription);
             mProjectVersionText                 = t.getString(R.styleable.AboutScreenProject_textProjectVersion);
-            mProjectDeveloperNameText           = t.getString(R.styleable.AboutScreenProject_textDeveloperName);
+            mProjectDevelopedByText             = t.getString(R.styleable.AboutScreenProject_textDevelopedBy);
             mProjectDeveloperDescriptionText    = t.getString(R.styleable.AboutScreenProject_textDeveloperDescription);
             mProjectWebsiteText                 = t.getString(R.styleable.AboutScreenProject_textProjectWebsite);
             mProjectGithubText                  = t.getString(R.styleable.AboutScreenProject_textProjectGithub);
@@ -128,7 +131,7 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
             mColorProjectName                   = t.getString(R.styleable.AboutScreenProject_textColorProjectName);
             mColorProjectDescription            = t.getString(R.styleable.AboutScreenProject_textColorProjectDescription);
             mColorProjectVersion                = t.getString(R.styleable.AboutScreenProject_textColorProjectVersion);
-            mColorDeveloperName                 = t.getString(R.styleable.AboutScreenProject_textColorDeveloperName);
+            mColorDevelopedBy                   = t.getString(R.styleable.AboutScreenProject_textColorDevelopedBy);
             mColorDeveloperDescription          = t.getString(R.styleable.AboutScreenProject_textColorDeveloperDescription);
             mColorWebsiteText                   = t.getString(R.styleable.AboutScreenProject_textColorProjectWebsite);
             mColorGithubText                    = t.getString(R.styleable.AboutScreenProject_textColorProjectGithub);
@@ -149,7 +152,7 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
             mProjectNameFontId                  = t.getResourceId(R.styleable.AboutScreenProject_textProjectNameFontId, 0);
             mProjectDescriptionFontId           = t.getResourceId(R.styleable.AboutScreenProject_textProjectDescriptionFontId, 0);
             mProjectVersionFontId               = t.getResourceId(R.styleable.AboutScreenProject_textProjectVersionFontId, 0);
-            mDeveloperNameFontId                = t.getResourceId(R.styleable.AboutScreenProject_textDeveloperNameFontId, 0);
+            mDevelopedByFontId                  = t.getResourceId(R.styleable.AboutScreenProject_textDevelopedByFontId, 0);
             mDeveloperDescriptionFontId         = t.getResourceId(R.styleable.AboutScreenProject_textDeveloperDescriptionFontId, 0);
             mProjectLinksFontId                 = t.getResourceId(R.styleable.AboutScreenProject_textProjectLinksFontId, 0);
 
@@ -157,7 +160,7 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
             mProjectNameFontStyle               = t.getString(R.styleable.AboutScreenProject_textProjectNameFontStyle);
             mProjectDescriptionFontStyle        = t.getString(R.styleable.AboutScreenProject_textProjectDescriptionFontStyle);
             mProjectVersionFontStyle            = t.getString(R.styleable.AboutScreenProject_textProjectVersionFontStyle);
-            mDeveloperNameFontStyle             = t.getString(R.styleable.AboutScreenProject_textDeveloperNameFontStyle);
+            mDevelopedByFontStyle               = t.getString(R.styleable.AboutScreenProject_textDevelopedByFontStyle);
             mDeveloperDescriptionFontStyle      = t.getString(R.styleable.AboutScreenProject_textDeveloperDescriptionFontStyle);
             mProjectLinksFontStyle              = t.getString(R.styleable.AboutScreenProject_textProjectLinksFontStyle);
 
@@ -183,7 +186,7 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
         mTextViewProjectName            = findViewById(R.id.tv_project_project_name);
         mTextViewProjectDescription     = findViewById(R.id.tv_project_project_description);
         mTextViewProjectVersion         = findViewById(R.id.tv_project_project_version);
-        mTextViewDeveloperName          = findViewById(R.id.tv_project_developed_by);
+        mTextViewDevelopedBy            = findViewById(R.id.tv_project_developed_by);
         mTextViewDeveloperDescription   = findViewById(R.id.tv_project_developer_description);
         mTextViewProjectWebsite         = findViewById(R.id.tv_project_website);
         mTextViewProjectGithub          = findViewById(R.id.tv_project_github);
@@ -201,6 +204,15 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
 
         mDividerTop                     = findViewById(R.id.dividerTop);
         mDividerBottom                  = findViewById(R.id.dividerBottom);
+    }
+
+    private void setListeners() {
+        // Listeners
+        mContainerWebsite.setOnClickListener(mOnClickListener);
+        mContainerGithub.setOnClickListener(mOnClickListener);
+        mContainerFacebook.setOnClickListener(mOnClickListener);
+        mContainerTwitter.setOnClickListener(mOnClickListener);
+        mContainerGooglePlay.setOnClickListener(mOnClickListener);
     }
 
     private void setAttributesAndValues(){
@@ -242,10 +254,10 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
             mTextViewProjectVersion.setText(mProjectVersionText);
 
         }
-        if(mProjectDeveloperNameText != null){
+        if(mProjectDevelopedByText != null){
             mDividerTop.setVisibility(VISIBLE);
-            mTextViewDeveloperName.setVisibility(VISIBLE);
-            mTextViewDeveloperName.setText(mProjectDeveloperNameText);
+            mTextViewDevelopedBy.setVisibility(VISIBLE);
+            mTextViewDevelopedBy.setText(mProjectDevelopedByText);
         }
         if(mProjectDeveloperDescriptionText != null){
             mDividerTop.setVisibility(VISIBLE);
@@ -315,7 +327,7 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
             textViewList.add(mTextViewProjectName);
             textViewList.add(mTextViewProjectDescription);
             textViewList.add(mTextViewProjectVersion);
-            textViewList.add(mTextViewDeveloperName);
+            textViewList.add(mTextViewDevelopedBy);
             textViewList.add(mTextViewDeveloperDescription);
             textViewList.add(mTextViewProjectWebsite);
             textViewList.add(mTextViewProjectGithub);
@@ -332,8 +344,8 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
             if(mColorProjectDescription != null){
                 setTextViewColor(mTextViewProjectDescription, mColorProjectDescription);
             }
-            if(mColorDeveloperName != null){
-                setTextViewColor(mTextViewDeveloperName, mColorDeveloperName);
+            if(mColorDevelopedBy != null){
+                setTextViewColor(mTextViewDevelopedBy, mColorDevelopedBy);
             }
             if(mColorDeveloperDescription != null){
                 setTextViewColor(mTextViewDeveloperDescription, mColorDeveloperDescription);
@@ -400,7 +412,7 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
             mTextViewProjectName.setTypeface(ResourcesCompat.getFont(getContext(), mProjectFontId));
             mTextViewProjectDescription.setTypeface(ResourcesCompat.getFont(getContext(), mProjectFontId));
             mTextViewProjectVersion.setTypeface(ResourcesCompat.getFont(getContext(), mProjectFontId));
-            mTextViewDeveloperName.setTypeface(ResourcesCompat.getFont(getContext(), mProjectFontId));
+            mTextViewDevelopedBy.setTypeface(ResourcesCompat.getFont(getContext(), mProjectFontId));
             mTextViewDeveloperDescription.setTypeface(ResourcesCompat.getFont(getContext(), mProjectFontId));
             mTextViewProjectWebsite.setTypeface(ResourcesCompat.getFont(getContext(), mProjectFontId));
             mTextViewProjectGithub.setTypeface(ResourcesCompat.getFont(getContext(), mProjectFontId));
@@ -418,8 +430,8 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
             if(mProjectVersionFontId != 0){
                 mTextViewProjectVersion.setTypeface(ResourcesCompat.getFont(getContext(), mProjectVersionFontId));
             }
-            if(mDeveloperNameFontId != 0){
-                mTextViewDeveloperName.setTypeface(ResourcesCompat.getFont(getContext(), mDeveloperNameFontId));
+            if(mDevelopedByFontId != 0){
+                mTextViewDevelopedBy.setTypeface(ResourcesCompat.getFont(getContext(), mDevelopedByFontId));
             }
             if(mDeveloperDescriptionFontId != 0){
                 mTextViewDeveloperDescription.setTypeface(ResourcesCompat.getFont(getContext(), mDeveloperDescriptionFontId));
@@ -442,7 +454,7 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
                     mTextViewProjectName.setTypeface(mTextViewProjectName.getTypeface(),                    Typeface.NORMAL);
                     mTextViewProjectDescription.setTypeface(mTextViewProjectDescription.getTypeface(),      Typeface.NORMAL);
                     mTextViewProjectVersion.setTypeface(mTextViewProjectVersion.getTypeface(),              Typeface.NORMAL);
-                    mTextViewDeveloperName.setTypeface(mTextViewDeveloperName.getTypeface(),                Typeface.NORMAL);
+                    mTextViewDevelopedBy.setTypeface(mTextViewDevelopedBy.getTypeface(),                Typeface.NORMAL);
                     mTextViewDeveloperDescription.setTypeface(mTextViewDeveloperDescription.getTypeface(),  Typeface.NORMAL);
                     mTextViewProjectWebsite.setTypeface(mTextViewProjectWebsite.getTypeface(),              Typeface.NORMAL);
                     mTextViewProjectGithub.setTypeface(mTextViewProjectGithub.getTypeface(),                Typeface.NORMAL);
@@ -454,7 +466,7 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
                     mTextViewProjectName.setTypeface(mTextViewProjectName.getTypeface(),                    Typeface.ITALIC);
                     mTextViewProjectDescription.setTypeface(mTextViewProjectDescription.getTypeface(),      Typeface.ITALIC);
                     mTextViewProjectVersion.setTypeface(mTextViewProjectVersion.getTypeface(),              Typeface.ITALIC);
-                    mTextViewDeveloperName.setTypeface(mTextViewDeveloperName.getTypeface(),                Typeface.ITALIC);
+                    mTextViewDevelopedBy.setTypeface(mTextViewDevelopedBy.getTypeface(),                Typeface.ITALIC);
                     mTextViewDeveloperDescription.setTypeface(mTextViewDeveloperDescription.getTypeface(),  Typeface.ITALIC);
                     mTextViewProjectWebsite.setTypeface(mTextViewProjectWebsite.getTypeface(),              Typeface.ITALIC);
                     mTextViewProjectGithub.setTypeface(mTextViewProjectGithub.getTypeface(),                Typeface.ITALIC);
@@ -466,7 +478,7 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
                     mTextViewProjectName.setTypeface(mTextViewProjectName.getTypeface(),                    Typeface.BOLD);
                     mTextViewProjectDescription.setTypeface(mTextViewProjectDescription.getTypeface(),      Typeface.BOLD);
                     mTextViewProjectVersion.setTypeface(mTextViewProjectVersion.getTypeface(),              Typeface.BOLD);
-                    mTextViewDeveloperName.setTypeface(mTextViewDeveloperName.getTypeface(),                Typeface.BOLD);
+                    mTextViewDevelopedBy.setTypeface(mTextViewDevelopedBy.getTypeface(),                Typeface.BOLD);
                     mTextViewDeveloperDescription.setTypeface(mTextViewDeveloperDescription.getTypeface(),  Typeface.BOLD);
                     mTextViewProjectWebsite.setTypeface(mTextViewProjectWebsite.getTypeface(),              Typeface.BOLD);
                     mTextViewProjectGithub.setTypeface(mTextViewProjectGithub.getTypeface(),                Typeface.BOLD);
@@ -478,7 +490,7 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
                     String nameText                 = mTextViewProjectName.getText().toString()             + SPACE_CHAR;
                     String descriptionText          = mTextViewProjectDescription.getText().toString()      + SPACE_CHAR;
                     String versionText              = mTextViewProjectVersion.getText().toString()          + SPACE_CHAR;
-                    String developerNameText        = mTextViewDeveloperName.getText().toString()           + SPACE_CHAR;
+                    String developerNameText        = mTextViewDevelopedBy.getText().toString()           + SPACE_CHAR;
                     String developerDescriptionText = mTextViewDeveloperDescription.getText().toString()    + SPACE_CHAR;
                     String websiteText              = mTextViewProjectWebsite.getText().toString()          + SPACE_CHAR;
                     String githubText               = mTextViewProjectGithub.getText().toString()           + SPACE_CHAR;
@@ -489,7 +501,7 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
                     mTextViewProjectName.setText(nameText);
                     mTextViewProjectDescription.setText(descriptionText);
                     mTextViewProjectVersion.setText(versionText);
-                    mTextViewDeveloperName.setText(developerNameText);
+                    mTextViewDevelopedBy.setText(developerNameText);
                     mTextViewDeveloperDescription.setText(developerDescriptionText);
                     mTextViewProjectWebsite.setText(websiteText);
                     mTextViewProjectGithub.setText(githubText);
@@ -500,7 +512,7 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
                     mTextViewProjectName.setTypeface(mTextViewProjectName.getTypeface(),                    Typeface.BOLD_ITALIC);
                     mTextViewProjectDescription.setTypeface(mTextViewProjectDescription.getTypeface(),      Typeface.BOLD_ITALIC);
                     mTextViewProjectVersion.setTypeface(mTextViewProjectVersion.getTypeface(),              Typeface.BOLD_ITALIC);
-                    mTextViewDeveloperName.setTypeface(mTextViewDeveloperName.getTypeface(),                Typeface.BOLD_ITALIC);
+                    mTextViewDevelopedBy.setTypeface(mTextViewDevelopedBy.getTypeface(),                Typeface.BOLD_ITALIC);
                     mTextViewDeveloperDescription.setTypeface(mTextViewDeveloperDescription.getTypeface(),  Typeface.BOLD_ITALIC);
                     mTextViewProjectWebsite.setTypeface(mTextViewProjectWebsite.getTypeface(),              Typeface.BOLD_ITALIC);
                     mTextViewProjectGithub.setTypeface(mTextViewProjectGithub.getTypeface(),                Typeface.BOLD_ITALIC);
@@ -600,21 +612,21 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
                 }
             }
 
-            if(mDeveloperNameFontStyle != null){
-                switch (mDeveloperNameFontStyle) {
+            if(mDevelopedByFontStyle != null){
+                switch (mDevelopedByFontStyle) {
                     case FONT_STYLE_NORMAL:
-                        mTextViewDeveloperName.setTypeface(mTextViewDeveloperName.getTypeface(), Typeface.NORMAL);
+                        mTextViewDevelopedBy.setTypeface(mTextViewDevelopedBy.getTypeface(), Typeface.NORMAL);
                         break;
                     case FONT_STYLE_ITALIC:
-                        mTextViewDeveloperName.setTypeface(mTextViewDeveloperName.getTypeface(), Typeface.ITALIC);
+                        mTextViewDevelopedBy.setTypeface(mTextViewDevelopedBy.getTypeface(), Typeface.ITALIC);
                         break;
                     case FONT_STYLE_BOLD:
-                        mTextViewDeveloperName.setTypeface(mTextViewDeveloperName.getTypeface(), Typeface.BOLD);
+                        mTextViewDevelopedBy.setTypeface(mTextViewDevelopedBy.getTypeface(), Typeface.BOLD);
                         break;
                     case FONT_STYLE_BOLD_ITALIC:
-                        String nameText         = mTextViewDeveloperName.getText().toString() + SPACE_CHAR;
-                        mTextViewDeveloperName.setText(nameText);
-                        mTextViewDeveloperName.setTypeface(mTextViewDeveloperName.getTypeface(), Typeface.BOLD_ITALIC);
+                        String nameText         = mTextViewDevelopedBy.getText().toString() + SPACE_CHAR;
+                        mTextViewDevelopedBy.setText(nameText);
+                        mTextViewDevelopedBy.setTypeface(mTextViewDevelopedBy.getTypeface(), Typeface.BOLD_ITALIC);
                         invalidate();
                         break;
                 }
@@ -811,8 +823,8 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
         invalidate();
     }
 
-    public void setProjectDeveloperNameText(String projectDeveloperNameText) {
-        mTextViewDeveloperName.setText(projectDeveloperNameText);
+    public void setProjectDevelopedByText(String projectDevelopedByText) {
+        mTextViewDevelopedBy.setText(projectDevelopedByText);
         invalidate();
     }
 
@@ -858,8 +870,8 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
         return mTextViewProjectVersion.getText().toString();
     }
 
-    public String getProjectDeveloperNameText() {
-        return mTextViewDeveloperName.getText().toString();
+    public String getProjectDevelopedByText() {
+        return mTextViewDevelopedBy.getText().toString();
     }
 
     public String getProjectDeveloperDescriptionText() {
@@ -1121,7 +1133,7 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
         List<TextView> textViewList = new ArrayList<>();
         textViewList.add(mTextViewProjectName);
         textViewList.add(mTextViewProjectDescription);
-        textViewList.add(mTextViewDeveloperName);
+        textViewList.add(mTextViewDevelopedBy);
         textViewList.add(mTextViewDeveloperDescription);
         textViewList.add(mTextViewProjectWebsite);
         textViewList.add(mTextViewProjectGithub);
@@ -1140,7 +1152,7 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
         invalidate();
     }
     public void setTextColorDeveloperName(int colorId){
-        setTextViewColor(mTextViewDeveloperName, colorId);
+        setTextViewColor(mTextViewDevelopedBy, colorId);
         invalidate();
     }
     public void setTextColorDeveloperDescription(int colorId){
@@ -1172,7 +1184,7 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
         List<TextView> textViewList = new ArrayList<>();
         textViewList.add(mTextViewProjectName);
         textViewList.add(mTextViewProjectDescription);
-        textViewList.add(mTextViewDeveloperName);
+        textViewList.add(mTextViewDevelopedBy);
         textViewList.add(mTextViewDeveloperDescription);
         textViewList.add(mTextViewProjectWebsite);
         textViewList.add(mTextViewProjectGithub);
@@ -1191,7 +1203,7 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
         invalidate();
     }
     public void setTextColorDeveloperName(String colorHexCode){
-        setTextViewColor(mTextViewDeveloperName, colorHexCode);
+        setTextViewColor(mTextViewDevelopedBy, colorHexCode);
         invalidate();
     }
     public void setTextColorDeveloperDescription(String colorHexCode){

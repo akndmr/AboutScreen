@@ -27,6 +27,7 @@
         <attr name="urlFacebook"                        format="reference|string"/>
         <attr name="urlTwitter"                         format="reference|string"/>
 
+        <attr name="iconColor"                          format="color"/>
         <attr name="iconColorWebsite"                   format="color"/>
         <attr name="iconColorGithub"                    format="color"/>
         <attr name="iconColorFacebook"                  format="color"/>
@@ -64,7 +65,7 @@
         <attr name="textProjectName"                    format="reference|string"/>
         <attr name="textProjectDescription"             format="reference|string"/>
         <attr name="textProjectVersion"                 format="reference|string"/>
-        <attr name="textDeveloperName"                  format="reference|string"/>
+        <attr name="textDevelopedBy"                    format="reference|string"/>
         <attr name="textDeveloperDescription"           format="reference|string"/>
         <attr name="textProjectWebsite"                 format="reference|string"/>
         <attr name="textProjectGithub"                  format="reference|string"/>
@@ -97,7 +98,7 @@
         <attr name="textColorProjectName"               format="color"/>
         <attr name="textColorProjectVersion"            format="color"/>
         <attr name="textColorProjectDescription"        format="color"/>
-        <attr name="textColorDeveloperName"             format="color"/>
+        <attr name="textColorDevelopedBy"               format="color"/>
         <attr name="textColorDeveloperDescription"      format="color"/>
         <attr name="textColorProjectWebsite"            format="color"/>
         <attr name="textColorProjectGithub"             format="color"/>
@@ -109,7 +110,7 @@
         <attr name="textProjectNameFontId"              format="reference|integer"/>
         <attr name="textProjectDescriptionFontId"       format="reference|integer"/>
         <attr name="textProjectVersionFontId"           format="reference|integer"/>
-        <attr name="textDeveloperNameFontId"            format="reference|integer"/>
+        <attr name="textDevelopedByFontId"              format="reference|integer"/>
         <attr name="textDeveloperDescriptionFontId"     format="reference|integer"/>
         <attr name="textProjectLinksFontId"             format="reference|integer"/>
 
@@ -118,7 +119,7 @@
         <attr name="textProjectNameFontStyle"           format="reference|string"/>
         <attr name="textProjectDescriptionFontStyle"    format="reference|string"/>
         <attr name="textProjectVersionFontStyle"        format="reference|string"/>
-        <attr name="textDeveloperNameFontStyle"         format="reference|string"/>
+        <attr name="textDevelopedByFontStyle"           format="reference|string"/>
         <attr name="textDeveloperDescriptionFontStyle"  format="reference|string"/>
 
         <attr name="isProjectGooglePlayLinkEnabled"     format="boolean"/>
