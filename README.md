@@ -31,8 +31,8 @@ Decide which type you will use:
 
 **1. Personal AboutScreen**
 If you want to add just your personal information (About Me) including your photo, name, description & social links, use this layout.
+
 ![AboutScreen library - Personal AboutScreen](https://raw.githubusercontent.com/akndmr/AboutScreen/master/PersonalAboutMe.PNG)
-  
 
       <io.github.akndmr.aboutscreen.AboutScreenPersonalLayout  
           android:id="@+id/about_screen_layout"  
@@ -41,6 +41,7 @@ If you want to add just your personal information (About Me) including your phot
 
 **2. Project AboutScreen**
 If you want to add project information with developer(personal/company) details, use this layout.
+
 ![AboutScreen library - Project AboutScreen](https://raw.githubusercontent.com/akndmr/AboutScreen/master/ProjecAboutMe.PNG)
 
     <io.github.akndmr.aboutscreen.AboutScreenProjectLayout
