@@ -30,6 +30,7 @@ Add the dependency
 Decide which type you will use:
 
 **1. Personal AboutScreen**
+
 If you want to add just your personal information (About Me) including your photo, name, description & social links, use this layout.
 
 ![AboutScreen library - Personal AboutScreen](https://raw.githubusercontent.com/akndmr/AboutScreen/master/PersonalAboutMe.PNG)
@@ -40,6 +41,7 @@ If you want to add just your personal information (About Me) including your phot
           android:layout_height="wrap_content"/>
 
 **2. Project AboutScreen**
+
 If you want to add project information with developer(personal/company) details, use this layout.
 
 ![AboutScreen library - Project AboutScreen](https://raw.githubusercontent.com/akndmr/AboutScreen/master/ProjecAboutMe.PNG)
