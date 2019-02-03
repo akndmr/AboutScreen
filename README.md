@@ -1,6 +1,8 @@
 # AboutScreen
 A fully customizable Android About Screen UI.
 
+[![Release](https://jitpack.io/v/akndmr/AboutScreen.svg)](https://jitpack.io/#akndmr/AboutScreen)
+
 > **Libraries** & **Contributors** sections are under development.
 
 ![](https://raw.githubusercontent.com/akndmr/AboutScreen/master/AboutScreen.gif)
