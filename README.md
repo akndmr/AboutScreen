@@ -1,7 +1,7 @@
 # AboutScreen
 A fully customizable Android About Screen UI.
 
-[![Release](https://jitpack.io/v/akndmr/AboutScreen.svg)](https://jitpack.io/#akndmr/AboutScreen) ![](https://img.shields.io/github/languages/top/akndmr/aboutscreen.svg?colorB=orange&style=flat)
+[![Release](https://jitpack.io/v/akndmr/AboutScreen.svg)](https://jitpack.io/#akndmr/AboutScreen) ![](https://img.shields.io/github/license/akndmr/aboutscreen.svg?style=flat) ![](https://img.shields.io/github/stars/akndmr/aboutscreen.svg?colorB=green&style=flat) ![](https://img.shields.io/github/languages/top/akndmr/aboutscreen.svg?colorB=orange&style=flat) ![](https://img.shields.io/github/languages/code-size/akndmr/aboutscreen.svg?style=flat) ![](https://img.shields.io/github/issues/akndmr/aboutscreen.svg?colorB=%237ed6df&style=flat) ![](https://img.shields.io/github/last-commit/akndmr/aboutscreen.svg?colorB=black&style=flat)
 
 > **Libraries** & **Contributors** sections are under development.
 
