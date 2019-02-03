@@ -44,8 +44,6 @@ public class AboutScreenPersonalLayout extends ConstraintLayout {
     public static final String FONT_STYLE_NORMAL = "NORMAL";
     public static final String FONT_STYLE_BOLD_ITALIC = "BOLD_ITALIC";
 
-    private AboutData mAboutData = null;
-
     private LinearLayout mContainerWebsite, mContainerGithub, mContainerFacebook,
     mContainerTwitter, mContainerGooglePlay;
 
@@ -79,7 +77,7 @@ public class AboutScreenPersonalLayout extends ConstraintLayout {
     private int mCardViewRadius, mCardViewElevation;
     private String mCardViewBackgroundColor;
 
-    private boolean isGooglePlayLinkAdded, isFromXml;
+    private boolean isGooglePlayLinkAdded;
 
     public AboutScreenPersonalLayout(Context context) {
         super(context, null);
@@ -118,8 +116,6 @@ public class AboutScreenPersonalLayout extends ConstraintLayout {
         TypedArray t = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.AboutScreenPersonal, 0, 0);
         // Extract custom attributes into member variables
         try {
-
-            isFromXml = t.getBoolean(R.styleable.AboutScreenPersonal_isFromXml, false);
 
             mCardViewRadius             = t.getDimensionPixelSize(R.styleable.AboutScreenPersonal_cardRadius,0);
             mCardViewElevation          = t.getDimensionPixelSize(R.styleable.AboutScreenPersonal_cardElevation,0);

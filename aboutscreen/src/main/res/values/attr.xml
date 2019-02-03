@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="AboutScreenPersonal">
-        <attr name="isFromXml"                          format="boolean"/>
-
         <attr name="cardRadius"                         format="dimension" />
         <attr name="cardElevation"                      format="dimension" />
         <attr name="cardBackgroundColor"                format="color"/>

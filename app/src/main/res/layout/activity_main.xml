@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:id="@+id/constraintLayout">
+    android:id="@+id/constraintLayoutMain">
 
     <io.github.akndmr.aboutscreen.AboutScreenPersonalLayout
         android:id="@+id/about_screen_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
+        android:visibility="visible"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -22,23 +22,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:cardRadius = "8dp"
         app:cardElevation = "4dp"
+        app:cardBackgroundColor = "#eeeeee"
         app:urlWebsite = "akndmr.github.io"
         app:urlGithub = "akndmr.github.io"
         app:urlTwitter = "akndmr.github.io"
         app:urlFacebook = "akndmr.github.io"
-        app:isGooglePlayLinkEnabled = "true"
+        app:isGooglePlayLinkEnabled = "false"
         app:textName = "Akın D."
         app:textDescription = "@string/dummy_description"
         app:textColor = "@color/colorAsphalt"
         app:iconColor = "@color/colorAsphalt"
-        app:textLinksFontId = "@font/architects_daughter"
-        />
+        app:textFontStyle = "BOLD_ITALIC"
+        app:textLinksFontId = "@font/architects_daughter"/>
+
 
     <io.github.akndmr.aboutscreen.AboutScreenProjectLayout
         android:id="@+id/about_screen_project_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="visible"
+        android:visibility="gone"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"

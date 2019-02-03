@@ -19,6 +19,12 @@ public class MainActivity extends AppCompatActivity {
         AboutScreenPersonalLayout aboutScreenPersonalLayout = (AboutScreenPersonalLayout) findViewById(R.id.about_screen_layout);
 
         aboutScreenPersonalLayout.setDescriptionText("this text is programmatically set");
+        aboutScreenPersonalLayout.setWebsiteIcon(R.drawable.ic_website);
+        aboutScreenPersonalLayout.setWebsiteIconTintColor(R.color.colorIconDefault);
+        aboutScreenPersonalLayout.setGithubIconTintColor("#333");
+        aboutScreenPersonalLayout.setProfilePhotoDrawable(R.drawable.profile_placeholder);
+        aboutScreenPersonalLayout.setTextColor(R.color.colorIconDefault);
+        aboutScreenPersonalLayout.showGooglePlayLink();
 
         ImageView iv = aboutScreenPersonalLayout.getProfilePhoto();
         Glide.with(this)
