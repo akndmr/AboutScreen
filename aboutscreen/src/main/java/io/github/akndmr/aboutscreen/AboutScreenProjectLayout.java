@@ -50,7 +50,7 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
     private String mColorProjectName, mColorProjectDescription, mColorProjectVersion, mColorDeveloperName, mColorDeveloperDescription,
     mColorWebsiteText, mColorGithubText, mColorFacebookText, mColorTwitterText, mColorGooglePlayText,
     mColorWebsiteIcon, mColorGithubIcon, mColorFacebookIcon, mColorTwitterIcon, mCOlorGooglePlayIcon,
-    mColorDividerTop, mColorDividerBottom, mColorProject, mColorProjectLinks;
+    mColorDividerTop, mColorDividerBottom, mColorProject, mColorProjectLinks, mColorProjectIcons;
 
     private boolean mIsGooglePlayLinkAdded, mShouldGetVersionFromGradle;
     private int mLogoProjectDrawableId, mLogoDeveloperDrawableId, mIconWebsiteDrawableId, mIconGithubDrawableId,
@@ -135,6 +135,8 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
             mColorFacebookText                  = t.getString(R.styleable.AboutScreenProject_textColorProjectFacebook);
             mColorTwitterText                   = t.getString(R.styleable.AboutScreenProject_textColorProjectTwitter);
             mColorGooglePlayText                = t.getString(R.styleable.AboutScreenProject_textColorProjectGooglePlay);
+
+            mColorProjectIcons                  = t.getString(R.styleable.AboutScreenProject_iconColorProject);
             mColorWebsiteIcon                   = t.getString(R.styleable.AboutScreenProject_iconColorProjectWebsite);
             mColorGithubIcon                    = t.getString(R.styleable.AboutScreenProject_iconColorProjectGithub);
             mColorFacebookIcon                  = t.getString(R.styleable.AboutScreenProject_iconColorProjectFacebook);
@@ -367,16 +369,26 @@ public class AboutScreenProjectLayout extends ConstraintLayout {
         }
 
         // Set icon tint / divider colors
-        if(mColorWebsiteIcon != null)
-            setIconTintColor(mIconWebsite, mColorWebsiteIcon);
-        if(mColorGithubIcon != null)
-            setIconTintColor(mIconGithub, mColorGithubIcon);
-        if(mColorFacebookIcon != null)
-            setIconTintColor(mIconFacebook, mColorFacebookIcon);
-        if(mColorTwitterIcon != null)
-            setIconTintColor(mIconTwitter, mColorTwitterIcon);
-        if(mCOlorGooglePlayIcon != null)
-            setIconTintColor(mIconGooglePlay, mCOlorGooglePlayIcon);
+        if(mColorProjectIcons != null){
+            setIconTintColor(mIconWebsite, mColorProjectIcons);
+            setIconTintColor(mIconGithub, mColorProjectIcons);
+            setIconTintColor(mIconFacebook, mColorProjectIcons);
+            setIconTintColor(mIconTwitter, mColorProjectIcons);
+            setIconTintColor(mIconGooglePlay, mColorProjectIcons);
+        }
+        else{
+            if(mColorWebsiteIcon != null)
+                setIconTintColor(mIconWebsite, mColorWebsiteIcon);
+            if(mColorGithubIcon != null)
+                setIconTintColor(mIconGithub, mColorGithubIcon);
+            if(mColorFacebookIcon != null)
+                setIconTintColor(mIconFacebook, mColorFacebookIcon);
+            if(mColorTwitterIcon != null)
+                setIconTintColor(mIconTwitter, mColorTwitterIcon);
+            if(mCOlorGooglePlayIcon != null)
+                setIconTintColor(mIconGooglePlay, mCOlorGooglePlayIcon);
+        }
+
         if(mColorDividerTop != null)
             setBackgroundColor(mDividerTop, mColorDividerTop);
         if(mColorDividerBottom != null)

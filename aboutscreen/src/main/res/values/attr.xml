@@ -85,6 +85,7 @@
         <attr name="urlProjectFacebook"                 format="reference|string"/>
         <attr name="urlProjectTwitter"                  format="reference|string"/>
 
+        <attr name="iconColorProject"                   format="color"/>
         <attr name="iconColorProjectWebsite"            format="color"/>
         <attr name="iconColorProjectGithub"             format="color"/>
         <attr name="iconColorProjectFacebook"           format="color"/>
