@@ -25,7 +25,7 @@ Add it in your root build.gradle at the end of repositories:
 Add the dependency
 
 	dependencies {
-	        implementation 'com.github.akndmr:AboutScreen:v1.0.0'
+	        implementation 'com.github.akndmr:AboutScreen:1.0.1-beta'
 	}
 
 ## Types & Usage
